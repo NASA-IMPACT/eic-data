@@ -1,4 +1,5 @@
 # eic-data
+
 This repository houses data and config used to create STAC records to be published to the EIC STAC catalog.
 
 ## Repository layout
