@@ -1,7 +1,7 @@
 {
   "collection": "blizzard-alley",
   "title": "Blizzard Alley",
-  "description": "Single value raster displaying the region of the USA known as Blizzard Alley, where at least 10-20 blizzards have occurred since 1950. Eastern North Dakota seen 50-100+ in the same time period. test",
+  "description": "Single value raster displaying the region of the USA known as Blizzard Alley, where at least 10-20 blizzards have occurred since 1950. Eastern North Dakota seen 50-100+ in the same time period. test.",
   "license": "CC0-1.0",
   "stac_version": "1.0.0",
   "dashboard:is_periodic": false,
