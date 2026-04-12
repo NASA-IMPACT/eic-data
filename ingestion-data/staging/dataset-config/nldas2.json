@@ -91,5 +91,5 @@
       ]
     }
   },
-  "tenant": "water-insight"
+  "eic:tenant": "water-insight"
 }
