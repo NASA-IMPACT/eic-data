@@ -82,5 +82,5 @@
       ]
     }
   },
-  "tenant": "air-quality"
+  "eic:tenant": "air-quality"
 }
