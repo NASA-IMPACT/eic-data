@@ -169,7 +169,7 @@
   "collection_concept_id": "C2837626477-GES_DISC",
   "dashboard:is_periodic": true,
   "dashboard:time_density": "month",
-  "tenant": "air-quality",
+  "eic:tenant": "air-quality",
   "stac_version": "1.0.0",
   "summaries": {}
 }
