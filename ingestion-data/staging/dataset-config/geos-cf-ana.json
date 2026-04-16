@@ -1,6 +1,6 @@
 {
   "collection": "geos-cf-ana",
-  "title": "GEOS-CF (Analysis)",
+  "title": "DEMO - GEOS-CF (Analysis)",
   "description": "Goddard Earth Observing System Composition Forecast (GEOS-CF) analysis files for Carbon Monoxide, Ozone, Nitrogen Dioxide, PM2.5, PM10, and Sulfur Dioxide.",
   "license": "CC0-1.0",
   "stac_version": "1.0.0",
@@ -63,30 +63,7 @@
     }
   ],
   "sample_files": [
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_CO_2025-10-22T00:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_CO_2025-10-22T01:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_CO_2025-10-22T02:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_CO_2025-10-22T03:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_NO2_2025-10-22T00:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_NO2_2025-10-22T01:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_NO2_2025-10-22T02:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_NO2_2025-10-22T03:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_O3_2025-10-22T00:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_O3_2025-10-22T01:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_O3_2025-10-22T02:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_O3_2025-10-22T03:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_PM10_2025-10-22T00:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_PM10_2025-10-22T01:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_PM10_2025-10-22T02:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_PM10_2025-10-22T03:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_PM25_2025-10-22T00:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_PM25_2025-10-22T01:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_PM25_2025-10-22T02:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_PM25_2025-10-22T03:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_SO2_2025-10-22T00:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_SO2_2025-10-22T01:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_SO2_2025-10-22T02:30:00Z.tif",
-    "s3://veda-data-store-staging/GEOS_CF/geos_cf_ana_SO2_2025-10-22T03:30:00Z.tif"
+    "s3://veda-airquality-dev/GEOS_CF/ana/geos_cf_ana_CO_2025-10-22T00:30:00Z.tif"
   ],
   "data_type": "cog",
   "stac_extensions": [
@@ -260,18 +237,7 @@
       "url": "https://www.earthdata.nasa.gov/dashboard/"
     }
   ],
-  "assets": {
-    "thumbnail": {
-      "title": "Thumbnail",
-      "description": "None",
-      "href": "None",
-      "type": "image/jpeg",
-      "roles": [
-        "thumbnail"
-      ]
-    }
-  },
-  "tenant": "air-quality",
+  "eic:tenant": "air-quality",
   "is_periodic": true,
   "time_density": "PT1H"
 }
