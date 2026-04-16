@@ -70,71 +70,6 @@
     "https://stac-extensions.github.io/render/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
-  "item_assets": {
-    "cog_default": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Default COG Layer",
-      "description": "Cloud optimized default layer to display on map"
-    },
-    "CO": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Carbon Monoxide",
-      "description": "Near-surface concentrations of carbon monoxide (CO) estimated by NASA's GEOS-CF model."
-    },
-    "NO2": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Nitrogen Dioxide",
-      "description": "Near-surface concentrations of nitrogen dioxide (NO2) estimated by NASA's GEOS-CF model."
-    },
-    "O3": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Ozone",
-      "description": "Near-surface concentrations of ozone (O3) estimated by NASA's GEOS-CF model."
-    },
-    "PM10": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "PM10",
-      "description": "Near-surface concentrations of PM10 estimated by NASA's GEOS-CF model."
-    },
-    "PM25": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "PM2.5",
-      "description": "Near-surface concentrations of PM2.5 estimated by NASA's GEOS-CF model."
-    },
-    "SO2": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Sulfur Dioxide",
-      "description": "Near-surface concentrations of sulfur dioxide (SO2) estimated by NASA's GEOS-CF model."
-    }
-  },
   "renders": {
     "dashboard": {
       "assets": [
@@ -238,6 +173,62 @@
     }
   ],
   "eic:tenant": "air-quality",
+  "item_assets": {
+    "CO": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Carbon Monoxide",
+      "description": "Near-surface concentrations of carbon monoxide (CO) estimated by NASA's GEOS-CF model."
+    },
+    "NO2": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Nitrogen Dioxide",
+      "description": "Near-surface concentrations of nitrogen dioxide (NO2) estimated by NASA's GEOS-CF model."
+    },
+    "O3": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Ozone",
+      "description": "Near-surface concentrations of ozone (O3) estimated by NASA's GEOS-CF model."
+    },
+    "PM10": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "PM10",
+      "description": "Near-surface concentrations of PM10 estimated by NASA's GEOS-CF model."
+    },
+    "PM25": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "PM2.5",
+      "description": "Near-surface concentrations of PM2.5 estimated by NASA's GEOS-CF model."
+    },
+    "SO2": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Sulfur Dioxide",
+      "description": "Near-surface concentrations of sulfur dioxide (SO2) estimated by NASA's GEOS-CF model."
+    }
+  },
   "is_periodic": true,
   "time_density": "PT1H"
 }
