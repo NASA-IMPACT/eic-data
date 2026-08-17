@@ -1,0 +1,120 @@
+{
+  "collection": "geos-co2-daygrid-vPRE",
+  "title": "GEOS Assimilated CO₂ Column Concentrations",
+  "description": "This dataset provides daily, global assimilated carbon dioxide (XCO₂) average column concentrations starting from January 1, 2015. The data are derived from OCO-2 observations that were input to the Goddard Earth Observing System (GEOS) Constituent Data Assimilation System (CoDAS), a modeling and data assimilation system maintained by NASA's Global Modeling and Assimilation Office (GMAO). XCO₂ average column values are provided in units of parts per million (ppm), while XCO₂ and XCO average column values are provided in units of parts per billion (ppb). The data have been regridded to 0.25 degrees and have also been transformed to Cloud Optimized GeoTIFF (COG) format. The source data can be found at https://portal.nccs.nasa.gov/datashare/gmao/geos_carb/carbon/vPRE/netcdf/ghg_tavg_day_glo_L1440x721_slv/.",
+  "license": "CC0-1.0",
+  "stac_version": "1.0.0",
+  "dashboard:is_periodic": true,
+  "dashboard:time_density": "day",
+  "links": [],
+  "spatial_extent": {
+    "xmin": -180,
+    "ymin": -90.125,
+    "xmax": 180,
+    "ymax": 90.125
+  },
+  "temporal_extent": {
+    "interval": [
+      [
+        "2015-01-01 00:00:00+00",
+        "2025-05-31 00:00:00+00"
+      ]
+    ]
+  },
+  "discovery_items": [
+    {
+      "discovery": "s3",
+      "prefix": "geos-ghg-daygrid-vPRE/",
+      "bucket": "ghgc-data-store",
+      "filename_regex": ".*tif$",
+      "id_regex": ".*_(.*).tif$",
+      "id_template": "geos-co2-daygrid-vPRE-{}",
+      "use_multithreading": false,
+      "assets": {
+        "xco2": {
+          "description": "Daily, global assimilated CO₂ average column concentrations derived from satellite data.",
+          "regex": ".*geos_carbon_vPRE_XCO2_.*.tif$",
+          "title": "Average Column CO₂ (XCO₂)"
+        }
+      },
+      "cogify": false,
+      "dry_run": false
+    }
+  ],
+  "sample_files": [
+    ""
+  ],
+  "data_type": "cog",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/render/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "cog_default": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Default COG Layer",
+      "description": "Cloud optimized default layer to display on map"
+    },
+    "xco2": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Average Column CO₂ (XCO₂)",
+      "description": "Daily, global assimilated CO₂ average column concentrations derived from satellite data."
+    }
+  },
+  "renders": {
+    "dashboard": {
+      "assets": [
+        "xco2"
+      ],
+      "colormap_name": "magma",
+      "resampling": "bilinear",
+      "rescale": [
+        [
+          395,
+          400
+        ]
+      ]
+    }
+  },
+  "providers": [
+    {
+      "name": "NASA",
+      "roles": [
+        "host"
+      ],
+      "url": "https://www.earthdata.nasa.gov/dashboard/"
+    }
+  ],
+  "eic:tenant": "ghgc",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          180,
+          -180,
+          90,
+          -90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2015-01-01T00:00:00Z",
+          "2025-12-31T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "is_periodic": true,
+  "type": "Collection",
+  "units": "Parts per million (ppm)"
+}
