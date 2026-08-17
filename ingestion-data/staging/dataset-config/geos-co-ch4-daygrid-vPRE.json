@@ -1,0 +1,133 @@
+{
+  "collection": "geos-co-ch4-daygrid-vPRE",
+  "title": "GEOS Assimilated CH₄, and CO Column Concentrations",
+  "description": "This dataset provides daily, global assimilated methane (XCH₄), and carbon monoxide (XCO) average column concentrations starting from January 1, 2015. The data are derived from OCO-2 observations that were input to the Goddard Earth Observing System (GEOS) Constituent Data Assimilation System (CoDAS), a modeling and data assimilation system maintained by NASA's Global Modeling and Assimilation Office (GMAO). XCO₂ average column values are provided in units of parts per million (ppm), while XCO₂ and XCO average column values are provided in units of parts per billion (ppb). The data have been regridded to 0.25 degrees and have also been transformed to Cloud Optimized GeoTIFF (COG) format. The source data can be found at https://portal.nccs.nasa.gov/datashare/gmao/geos_carb/carbon/vPRE/netcdf/ghg_tavg_day_glo_L1440x721_slv/.",
+  "license": "CC0-1.0",
+  "stac_version": "1.0.0",
+  "dashboard:is_periodic": true,
+  "dashboard:time_density": "day",
+  "links": [],
+  "spatial_extent": {
+    "xmin": -180,
+    "ymin": -90,
+    "xmax": 180,
+    "ymax": 90
+  },
+  "temporal_extent": {
+    "startdate": "2024-01-01T00:00:00Z",
+    "enddate": "2025-12-31T00:00:00Z"
+  },
+  "discovery_items": [
+    {
+      "discovery": "s3",
+      "prefix": "geos-ghg-daygrid-vPRE/",
+      "bucket": "ghgc-data-store",
+      "filename_regex": ".*tif$",
+      "id_regex": ".*_(.*).tif$",
+      "id_template": "geos-co-ch4-daygrid-vPRE-{}",
+      "use_multithreading": false,
+      "assets": {
+        "xch4": {
+          "description": "Daily, global assimilated CH₄ average column concentrations derived from satellite data.",
+          "regex": ".*geos_carbon_vPRE_XCH4_.*.tif$",
+          "title": "Average Column CH₄ (XCH₄)"
+        },
+        "xco": {
+          "description": "Daily, global assimilated CO average column concentrations derived from satellite data.",
+          "regex": ".*geos_carbon_vPRE_XCO_.*.tif$",
+          "title": "Average Column CO (XCO)"
+        }
+      },
+      "cogify": false,
+      "dry_run": false
+    }
+  ],
+  "sample_files": [
+    ""
+  ],
+  "data_type": "cog",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/render/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "renders": {
+    "dashboard": {
+      "assets": [
+        "xch4"
+      ],
+      "colormap_name": "magma",
+      "resampling": "bilinear",
+      "rescale": [
+        [
+          1750,
+          1900
+        ]
+      ]
+    },
+    "xco": {
+      "assets": [
+        "xco"
+      ],
+      "colormap_name": "magma",
+      "rescale": [
+        [
+          50,
+          90
+        ]
+      ]
+    }
+  },
+  "providers": [],
+  "eic:tenant": "ghgc",
+  "item_assets": {
+    "cog_default": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Default COG Layer",
+      "description": "Cloud optimized default layer to display on map"
+    },
+    "xch4": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Average Column CH₄ (XCH₄)",
+      "description": "Daily, global assimilated CH₄ average column concentrations derived from satellite data."
+    },
+    "xco": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Average Column CO (XCO)",
+      "description": "Daily, global assimilated CO average column concentrations derived from satellite data."
+    }
+  },
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          180,
+          -180,
+          90,
+          -90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-01-01T00:00:00Z",
+          "2025-12-31T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "type": "Collection",
+  "units": "Parts per billion (ppb)"
+}
