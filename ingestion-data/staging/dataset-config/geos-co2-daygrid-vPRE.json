@@ -8,9 +8,9 @@
   "dashboard:time_density": "day",
   "links": [],
   "spatial_extent": {
-    "xmin": -180,
+    "xmin": -180.0,
     "ymin": -90.125,
-    "xmax": 180,
+    "xmax": 180.0,
     "ymax": 90.125
   },
   "temporal_extent": {
