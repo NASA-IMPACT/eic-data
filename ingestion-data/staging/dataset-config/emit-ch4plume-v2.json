@@ -1,0 +1,67 @@
+{
+  "collection": "emit-ch4plume-v2",
+  "title": "EMIT Methane Point Source Plume Complexes v2",
+  "description": "This dataset provides methane plume complexes at 60 meter resolution measured with the EMIT instrument on the International Space Station (ISS) in units of parts per million meter (ppm-m). Due to its position on the ISS, EMIT does not sample everywhere on Earth nor can methane plumes be derived for all locations observed. By measuring the spectral fingerprint of methane, EMIT can map areas of high methane concentration over background levels in the atmosphere, identifying plume complexes, and estimating the methane enhancements. Large methane emissions, typically referred to as point source emissions, represent a significant proportion of total methane emissions from the production, transport, and processing of oil and natural gas, landfills, and other sources. Data is available starting August 1, 2022 and data collection is ongoing. The source data and additional information can be found at https://doi.org/10.5067/EMIT/EMITL2BCH4PLM.002",
+  "license": "CC0-1.0",
+  "stac_version": "1.0.0",
+  "dashboard:time_density": "day",
+  "spatial_extent": {
+    "xmin": -121.90661810411778,
+    "ymin": -46.67515686526545,
+    "xmax": 151.4637026107715,
+    "ymax": 51.82354936938456
+  },
+  "temporal_extent": {
+    "startdate": "2022-08-09T00:00:00Z",
+    "enddate": "2026-05-10T00:00:00Z"
+  },
+  "discovery_items": [
+    {
+      "discovery": "s3",
+      "prefix": "EMITL2BCH4PLM.002/",
+      "bucket": "lp-prod-protected",
+      "filename_regex": ".*\\.tif$",
+      "id_regex": ".*(EMIT_L2B_CH4PLM_002_.*)\\.tif$",
+      "id_template": "{}",
+      "use_multithreading": false,
+      "cogify": false,
+      "dry_run": false,
+      "assets": {
+        "ch4-plume-emissions": {
+          "title": "CH4 Plume Emission",
+          "description": "Methane plume  complex    emission  data",
+          "regex": ".*\\.tif$"
+        }
+      }
+    }
+  ],
+  "sample_files": [
+    ""
+  ],
+  "data_type": "cog",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/render/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "providers": [
+    {
+      "name": "NASA VEDA",
+      "roles": [
+        "host"
+      ],
+      "url": "https://www.earthdata.nasa.gov/dashboard/"
+    }
+  ],
+  "eic:tenant": "ghgc",
+  "item_assets": {
+    "ch4-plume-emissions": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "EMIT Methane Point Source Plume Complexes",
+      "description": "Methane plume complexes from point source emitters."
+    }
+  }
+}
