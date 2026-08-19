@@ -92,7 +92,7 @@ def promote_to_production(payload):
         "Authorization": "Basic " + api_token,
     }
 
-    payload["conf"].setdefault("transfer", True)
+    payload["conf"].setdefault("transfer", False)
     body = {
         **payload,
         "dag_run_id": f"{promotion_dag}-{uuid.uuid4()}",
