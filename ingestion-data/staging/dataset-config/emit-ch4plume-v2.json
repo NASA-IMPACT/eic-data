@@ -43,16 +43,6 @@
     "https://stac-extensions.github.io/render/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
-  "providers": [
-    {
-      "name": "NASA VEDA",
-      "roles": [
-        "host"
-      ],
-      "url": "https://www.earthdata.nasa.gov/dashboard/"
-    }
-  ],
-  "eic:tenant": "ghgc",
   "item_assets": {
     "cog_default": {
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -72,5 +62,47 @@
       "title": "EMIT Methane Point Source Plume Complexes",
       "description": "Methane plume complexes from point source emitters."
     }
-  }
+  },
+  "renders": {
+    "dashboard": {
+      "bidx": 1,
+      "assets": [
+        "ch4-plume-emissions"
+      ],
+      "nodata": -9999,
+      "rescale": [
+        [
+          1,
+          1500
+        ]
+      ],
+      "resampling": "bilinear",
+      "colormap_name": "plasma"
+    },
+    "ch4-plume-emissions": {
+      "bidx": 1,
+      "assets": [
+        "ch4-plume-emissions"
+      ],
+      "nodata": -9999,
+      "rescale": [
+        [
+          1,
+          1500
+        ]
+      ],
+      "resampling": "bilinear",
+      "colormap_name": "plasma"
+    }
+  },
+  "providers": [
+    {
+      "name": "NASA VEDA",
+      "roles": [
+        "host"
+      ],
+      "url": "https://www.earthdata.nasa.gov/dashboard/"
+    }
+  ],
+  "eic:tenant": "ghgc"
 }
