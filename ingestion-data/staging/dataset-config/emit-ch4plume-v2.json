@@ -95,14 +95,5 @@
       "colormap_name": "plasma"
     }
   },
-  "providers": [
-    {
-      "name": "NASA VEDA",
-      "roles": [
-        "host"
-      ],
-      "url": "https://www.earthdata.nasa.gov/dashboard/"
-    }
-  ],
   "eic:tenant": "ghgc"
 }
