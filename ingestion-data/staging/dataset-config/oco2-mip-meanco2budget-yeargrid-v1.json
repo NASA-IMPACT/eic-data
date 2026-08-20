@@ -35,15 +35,6 @@
     "https://stac-extensions.github.io/render/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
-  "providers": [
-    {
-      "name": "NASA VEDA",
-      "roles": [
-        "host"
-      ],
-      "url": "https://www.earthdata.nasa.gov/dashboard/"
-    }
-  ],
   "eic:tenant": "ghgc",
   "item_assets": {
     "cog_default": {
