@@ -32,7 +32,7 @@
           "title": "Fossil CH₄ Emission"
         },
         "microbial": {
-          "description": "Emission of methane from all microbial sources, such as wetlands, agriculture and termites.",
+          "description": "Emission of methane from all microbial sources, such as wetlands, ruminants, agriculture, and termites.",
           "regex": ".*methane_emis_microbial.*.tif$",
           "title": "Microbial CH₄ Emission"
         },
@@ -66,42 +66,6 @@
       ],
       "title": "Default COG Layer",
       "description": "Cloud optimized default layer to display on map"
-    },
-    "fossil": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Fossil CH₄ Emission",
-      "description": "Emission of methane from all microbial sources, such as wetlands, ruminants, agriculture, and termites."
-    },
-    "microbial": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Microbial CH₄ Emission",
-      "description": "Emission of methane from all microbial sources, such as wetlands, ruminants, agriculture, and termites."
-    },
-    "pyrogenic": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Pyrogenic CH₄ Emission",
-      "description": "Emission of methane from all sources of biomass burning, such as wildfires and crop burning."
-    },
-    "total": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Total CH₄ Emission",
-      "description": "Total methane emission from microbial, fossil and pyrogenic sources"
     }
   },
   "renders": {
