@@ -40,9 +40,9 @@
       "use_multithreading": false,
       "assets": {
         "xco2": {
-          "description": "Daily, global assimilated CO₂ average column concentrations derived from satellite data.",
+          "description": "Daily average column concentrations of carbon dioxide derived from satellite data.",
           "regex": ".*geos_carbon_vPRE_XCO2_.*.tif$",
-          "title": "Average Column CO₂ (XCO₂)"
+          "title": "Average Dry-Air Column CO₂ (XCO₂)"
         }
       },
       "cogify": false,
@@ -57,6 +57,26 @@
     "https://stac-extensions.github.io/render/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
+  "item_assets": {
+    "cog_default": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Default COG Layer",
+      "description": "Cloud optimized default layer to display on map"
+    },
+    "xco2": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Average Dry-Air Column CO₂ (XCO₂)",
+      "description": "Daily average column concentrations of carbon dioxide derived from satellite data."
+    }
+  },
   "renders": {
     "dashboard": {
       "assets": [
@@ -74,26 +94,6 @@
   },
   "providers": [],
   "eic:tenant": "ghgc",
-  "item_assets": {
-    "cog_default": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Default COG Layer",
-      "description": "Cloud optimized default layer to display on map"
-    },
-    "xco2": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Average Column CO₂ (XCO₂)",
-      "description": "Daily, global assimilated CO₂ average column concentrations derived from satellite data."
-    }
-  },
   "extent": {
     "spatial": {
       "bbox": [
