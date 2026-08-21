@@ -8,14 +8,26 @@
   "dashboard:time_density": "day",
   "links": [],
   "spatial_extent": {
-    "xmin": -180.0,
-    "ymin": -90.125,
-    "xmax": 180.0,
-    "ymax": 90.125
+    "xmin": -180,
+    "ymin": -90,
+    "xmax": 180,
+    "ymax": 90,
+    "bbox": [
+      [
+        -180,
+        -90.125,
+        180,
+        90.125
+      ]
+    ]
   },
   "temporal_extent": {
-    "startdate": "2015-01-01T00:00:00Z",
-    "enddate": "2025-05-31T00:00:00Z"
+    "interval": [
+      [
+        "2015-01-01 00:00:00+00",
+        "2025-05-31 00:00:00+00"
+      ]
+    ]
   },
   "discovery_items": [
     {
@@ -110,7 +122,6 @@
       ]
     }
   },
-  "is_periodic": true,
   "type": "Collection",
   "units": "Parts per million (ppm)"
 }
