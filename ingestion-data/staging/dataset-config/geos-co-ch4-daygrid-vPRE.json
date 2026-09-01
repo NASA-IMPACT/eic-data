@@ -28,14 +28,14 @@
       "use_multithreading": false,
       "assets": {
         "xch4": {
-          "description": "Daily, global assimilated CH₄ average column concentrations derived from satellite data.",
+          "description": "Daily average column concentrations of methane derived from satellite data.",
           "regex": ".*geos_carbon_vPRE_XCH4_.*.tif$",
-          "title": "Average Column CH₄ (XCH₄)"
+          "title": "Average Dry-Air Column CH₄ (XCH₄)"
         },
         "xco": {
-          "description": "Daily, global assimilated CO average column concentrations derived from satellite data.",
+          "description": "Daily average column concentrations of carbon monoxide derived from satellite data.",
           "regex": ".*geos_carbon_vPRE_XCO_.*.tif$",
-          "title": "Average Column CO (XCO)"
+          "title": "Average Dry-Air Column CO (XCO)"
         }
       },
       "cogify": false,
@@ -50,6 +50,35 @@
     "https://stac-extensions.github.io/render/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
+  "item_assets": {
+    "cog_default": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Default COG Layer",
+      "description": "Cloud optimized default layer to display on map"
+    },
+    "xch4": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Average Dry-Air Column CH₄ (XCH₄)",
+      "description": "Daily average column concentrations of methane derived from satellite data."
+    },
+    "xco": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Average Dry-Air Column CO (XCO)",
+      "description": "Daily average column concentrations of carbon monoxide derived from satellite data."
+    }
+  },
   "renders": {
     "dashboard": {
       "assets": [
@@ -79,35 +108,6 @@
   },
   "providers": [],
   "eic:tenant": "ghgc",
-  "item_assets": {
-    "cog_default": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Default COG Layer",
-      "description": "Cloud optimized default layer to display on map"
-    },
-    "xch4": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Average Column CH₄ (XCH₄)",
-      "description": "Daily, global assimilated CH₄ average column concentrations derived from satellite data."
-    },
-    "xco": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Average Column CO (XCO)",
-      "description": "Daily, global assimilated CO average column concentrations derived from satellite data."
-    }
-  },
   "extent": {
     "spatial": {
       "bbox": [
@@ -123,7 +123,7 @@
       "interval": [
         [
           "2024-01-01T00:00:00Z",
-          "2025-12-31T00:00:00Z"
+          "2025-05-31T00:00:00Z"
         ]
       ]
     }
