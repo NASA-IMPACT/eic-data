@@ -6,6 +6,26 @@
   "stac_version": "1.0.0",
   "dashboard:is_periodic": true,
   "dashboard:time_density": "year",
+  "extent": {
+    "spatial": {
+        "bbox": [
+            [
+                -180,
+                -90,
+                180,
+                90
+            ]
+        ]
+    },
+    "temporal": {
+        "interval": [
+            [
+                "2015-01-01T00:00:00Z",
+                "2020-01-01T00:00:00Z"
+            ]
+        ]
+    }
+  },
   "spatial_extent": {
     "xmin": -180,
     "ymin": -90,
