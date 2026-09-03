@@ -14,12 +14,8 @@
     "ymax": 90
   },
   "temporal_extent": {
-    "interval": [
-      [
-        "2015-01-01T00:00:00Z",
-        "2025-05-31T23:59:59Z"
-      ]
-    ]
+    "startdate": "2015-01-01T00:00:00Z",
+    "enddate": "2025-05-31T23:59:59Z"
   },
   "discovery_items": [
     {
