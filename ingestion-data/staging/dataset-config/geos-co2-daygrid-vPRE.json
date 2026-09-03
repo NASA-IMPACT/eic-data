@@ -8,14 +8,26 @@
   "dashboard:time_density": "day",
   "links": [],
   "spatial_extent": {
-    "xmin": -180.0,
-    "ymin": -90.125,
-    "xmax": 180.0,
-    "ymax": 90.125
+    "xmin": -180,
+    "ymin": -90,
+    "xmax": 180,
+    "ymax": 90,
+    "bbox": [
+      [
+        -180,
+        -90,
+        180,
+        90
+      ]
+    ]
   },
   "temporal_extent": {
-    "startdate": "2015-01-01T00:00:00Z",
-    "enddate": "2025-05-31T00:00:00Z"
+    "interval": [
+      [
+        "2015-01-01T00:00:00Z",
+        "2025-05-31T23:59:59Z"
+      ]
+    ]
   },
   "discovery_items": [
     {
@@ -28,9 +40,9 @@
       "use_multithreading": false,
       "assets": {
         "xco2": {
-          "description": "Daily, global assimilated CO₂ average column concentrations derived from satellite data.",
+          "description": "Daily average column concentrations of carbon dioxide derived from satellite data.",
           "regex": ".*geos_carbon_vPRE_XCO2_.*.tif$",
-          "title": "Average Column CO₂ (XCO₂)"
+          "title": "Average Dry-Air Column CO₂ (XCO₂)"
         }
       },
       "cogify": false,
@@ -61,8 +73,8 @@
         "data",
         "layer"
       ],
-      "title": "Average Column CO₂ (XCO₂)",
-      "description": "Daily, global assimilated CO₂ average column concentrations derived from satellite data."
+      "title": "Average Dry-Air Column CO₂ (XCO₂)",
+      "description": "Daily average column concentrations of carbon dioxide derived from satellite data."
     }
   },
   "renders": {
@@ -80,15 +92,7 @@
       ]
     }
   },
-  "providers": [
-    {
-      "name": "NASA",
-      "roles": [
-        "host"
-      ],
-      "url": "https://www.earthdata.nasa.gov/dashboard/"
-    }
-  ],
+  "providers": [],
   "eic:tenant": "ghgc",
   "extent": {
     "spatial": {
@@ -105,12 +109,11 @@
       "interval": [
         [
           "2015-01-01T00:00:00Z",
-          "2025-12-31T00:00:00Z"
+          "2025-05-31T23:59:59Z"
         ]
       ]
     }
   },
-  "is_periodic": true,
   "type": "Collection",
   "units": "Parts per million (ppm)"
 }
