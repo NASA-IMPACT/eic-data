@@ -57,6 +57,23 @@
     "https://stac-extensions.github.io/render/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
+  "renders": {
+    "dashboard": {
+      "assets": [
+        "xco2"
+      ],
+      "colormap_name": "magma",
+      "resampling": "bilinear",
+      "rescale": [
+        [
+          395,
+          400
+        ]
+      ]
+    }
+  },
+  "providers": [],
+  "eic:tenant": "ghgc",
   "item_assets": {
     "cog_default": {
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -77,23 +94,6 @@
       "description": "Daily average column concentrations of carbon dioxide derived from satellite data."
     }
   },
-  "renders": {
-    "dashboard": {
-      "assets": [
-        "xco2"
-      ],
-      "colormap_name": "magma",
-      "resampling": "bilinear",
-      "rescale": [
-        [
-          395,
-          400
-        ]
-      ]
-    }
-  },
-  "providers": [],
-  "eic:tenant": "ghgc",
   "extent": {
     "spatial": {
       "bbox": [
