@@ -14,7 +14,7 @@
   },
   "temporal_extent": {
     "startdate": "1998-01-01T00:00:00Z",
-    "enddate": "2023-12-01T23:59:59Z"
+    "enddate": "2023-12-31T23:59:59Z"
   },
   "discovery_items": [
     {
@@ -148,7 +148,7 @@
   "summaries": {
     "datetime": [
       "1998-01-01T00:00:00Z",
-      "2023-12-01T23:59:59Z"
+      "2023-12-31T23:59:59Z"
     ]
   },
   "type": "Collection"
