@@ -1,0 +1,155 @@
+{
+  "collection": "ct-ch4-monthgrid-v2025",
+  "title": "CarbonTracker-CH₄ Isotopic Methane Inverse Fluxes v2025",
+  "description": "Surface methane (CH₄) emissions are derived from atmospheric measurements of methane and its ¹³C carbon isotope content. Different sources of methane contain different ratios of the two stable isotopologues, ¹²CH₄ and ¹³CH₄. This makes normally indistinguishable collocated sources of methane, say from agriculture and oil and gas exploration, distinguishable. The National Oceanic and Atmospheric Administration (NOAA) collects whole air samples from its global cooperative network of flasks (https://gml.noaa.gov/ccgg/about.html), which are then analyzed for methane and other trace gases. A subset of those flasks are also analyzed for ¹³C of methane in collaboration with the Institute of Arctic and Alpine Research at the University of Colorado Boulder. Scientists at the National Aeronautics and Space Administration (NASA) and NOAA used those measurements of methane and ¹³C of methane in conjunction with a model of atmospheric circulation to estimate emissions of methane separated by three source types: microbial, fossil and pyrogenic. This dataset presents monthly methane emissions in units of grams of methane per square meter per year (g CH₄/m²/year) from microbial, fossil and pyrogenic sources, along with a layer of total methane emissions from all three sources combined, at 1° resolution from 1998 to 2023. The source data can be found at https://doi.org/10.25925/hxks-v755",
+  "license": "CC0-1.0",
+  "stac_version": "1.0.0",
+  "dashboard:is_periodic": true,
+  "dashboard:time_density": "month",
+  "spatial_extent": {
+    "xmin": -180,
+    "ymin": -90,
+    "xmax": 180,
+    "ymax": 90
+  },
+  "temporal_extent": {
+    "startdate": "1998-01-01T00:00:00Z",
+    "enddate": "2023-12-31T23:59:59Z"
+  },
+  "discovery_items": [
+    {
+      "discovery": "s3",
+      "prefix": "ct-ch4-monthgrid-v2025/",
+      "bucket": "ghgc-data-store",
+      "filename_regex": ".*methane_emis_.*.tif$",
+      "id_regex": ".*_(.*).tif$",
+      "id_template": "ct-ch4-monthgrid-v2025-{}",
+      "use_multithreading": false,
+      "assets": {
+        "fossil": {
+          "description": "Emission of methane from all fossil sources, such as oil and gas activities and coal mining.",
+          "regex": ".*methane_emis_fossil.*.tif$",
+          "title": "Fossil CH₄ Emission"
+        },
+        "microbial": {
+          "description": "Emission of methane from all microbial sources, such as wetlands, ruminants, agriculture, and termites.",
+          "regex": ".*methane_emis_microbial.*.tif$",
+          "title": "Microbial CH₄ Emission"
+        },
+        "pyrogenic": {
+          "description": "Emission of methane from all sources of biomass burning, such as wildfires and crop residue burning.",
+          "regex": ".*methane_emis_pyrogenic.*.tif$",
+          "title": "Pyrogenic CH₄ Emission"
+        },
+        "total": {
+          "description": "Total methane emission from microbial, fossil and pyrogenic sources.",
+          "regex": ".*methane_emis_total.*.tif$",
+          "title": "Total CH₄ Emission"
+        }
+      }
+    }
+  ],
+  "sample_files": [
+    ""
+  ],
+  "data_type": "cog",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/render/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "cog_default": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Default COG Layer",
+      "description": "Cloud optimized default layer to display on map"
+    }
+  },
+  "renders": {
+    "dashboard": {
+      "assets": [
+        "total"
+      ],
+      "colormap_name": "purd",
+      "rescale": [
+        [
+          0,
+          50
+        ]
+      ]
+    },
+    "fossil": {
+      "assets": [
+        "fossil"
+      ],
+      "colormap_name": "purd",
+      "rescale": [
+        [
+          0,
+          50
+        ]
+      ]
+    },
+    "microbial": {
+      "assets": [
+        "microbial"
+      ],
+      "colormap_name": "purd",
+      "rescale": [
+        [
+          0,
+          30
+        ]
+      ]
+    },
+    "pyrogenic": {
+      "assets": [
+        "pyrogenic"
+      ],
+      "colormap_name": "purd",
+      "rescale": [
+        [
+          0,
+          8
+        ]
+      ]
+    },
+    "total": {
+      "assets": [
+        "total"
+      ],
+      "colormap_name": "purd",
+      "rescale": [
+        [
+          0,
+          50
+        ]
+      ]
+    }
+  },
+  "providers": [],
+  "eic:tenant": "ghgc",
+  "datetime_range": "day",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    }
+  },
+  "summaries": {
+    "datetime": [
+      "1998-01-01T00:00:00Z",
+      "2023-12-31T23:59:59Z"
+    ]
+  },
+  "type": "Collection"
+}
