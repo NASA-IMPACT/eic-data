@@ -6,26 +6,6 @@
   "stac_version": "1.0.0",
   "dashboard:is_periodic": true,
   "dashboard:time_density": "year",
-  "extent": {
-    "spatial": {
-        "bbox": [
-            [
-                -180,
-                -90,
-                180,
-                90
-            ]
-        ]
-    },
-    "temporal": {
-        "interval": [
-            [
-                "2015-01-01T00:00:00Z",
-                "2020-01-01T00:00:00Z"
-            ]
-        ]
-    }
-  },
   "spatial_extent": {
     "xmin": -180,
     "ymin": -90,
@@ -40,7 +20,7 @@
     {
       "discovery": "s3",
       "prefix": "oco2-mip-meanco2budget-yeargrid-v1/",
-      "bucket": "ghgc-data-store-develop",
+      "bucket": "ghgc-data-store",
       "filename_regex": ".*topdown_.*.tif$",
       "id_regex": ".*_(.*).tif$",
       "id_template": "oco2-mip-meanco2budget-yeargrid-v1-{}",
@@ -363,5 +343,25 @@
       "url": "https://www.earthdata.nasa.gov/dashboard/"
     }
   ],
-  "eic:tenant": "ghgc"
+  "eic:tenant": "ghgc",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2015-01-01T00:00:00Z",
+          "2020-01-01T00:00:00Z"
+        ]
+      ]
+    }
+  }
 }
