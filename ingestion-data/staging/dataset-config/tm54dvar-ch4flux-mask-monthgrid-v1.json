@@ -20,7 +20,7 @@
     {
       "discovery": "s3",
       "prefix": "tm54dvar-ch4flux-mask-monthgrid-v1/",
-      "bucket": "ghgc-data-store-develop",
+      "bucket": "ghgc-data-store",
       "filename_regex": ".*methane_emis_.*.tif$",
       "datetime_range": "month",
       "id_regex": ".*_(.*).tif$",
@@ -59,6 +59,53 @@
     "https://stac-extensions.github.io/render/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
+  "item_assets": {
+    "cog_default": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Default COG Layer",
+      "description": "Cloud optimized default layer to display on map"
+    },
+    "total": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Total CH₄ Emission",
+      "description": "Total methane emission from microbial, fossil and pyrogenic sources"
+    },
+    "microbial": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Microbial CH₄ Emission",
+      "description": "Emission of methane from all microbial sources, such as wetlands, agriculture and termites."
+    },
+    "fossil": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Fossil CH₄ Emission",
+      "description": "Emission of methane from all fossil sources, such as oil and gas activities and coal mining."
+    },
+    "pyrogenic": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Pyrogenic CH₄ Emission",
+      "description": "Emission of methane from all sources of biomass burning, such as wildfires and crop burning."
+    }
+  },
   "renders": {
     "dashboard": {
       "assets": [
@@ -123,52 +170,5 @@
   },
   "providers": [],
   "eic:tenant": "ghgc",
-  "item_assets": {
-    "cog_default": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Default COG Layer",
-      "description": "Cloud optimized default layer to display on map"
-    },
-    "total": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Total CH₄ Emission",
-      "description": "Total methane emission from microbial, fossil and pyrogenic sources"
-    },
-    "microbial": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Microbial CH₄ Emission",
-      "description": "Emission of methane from all microbial sources, such as wetlands, agriculture and termites."
-    },
-    "fossil": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Fossil CH₄ Emission",
-      "description": "Emission of methane from all fossil sources, such as oil and gas activities and coal mining."
-    },
-    "pyrogenic": {
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "roles": [
-        "data",
-        "layer"
-      ],
-      "title": "Pyrogenic CH₄ Emission",
-      "description": "Emission of methane from all sources of biomass burning, such as wildfires and crop burning."
-    }
-  },
   "assets": {}
 }
