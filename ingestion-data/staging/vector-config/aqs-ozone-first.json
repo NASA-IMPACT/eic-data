@@ -1,0 +1,30 @@
+{
+  "bucket": "airquality-data-store-develop",
+  "prefix": "aqs/transformed/hourly/ozone/",
+  "vector": true,
+  "chunk_size": 1,
+  "worker_concurrency": 1,
+  "collection": "ozone_hourly_bt_test_slesa2",
+  "filename_regex": ".*hourly_44201_2020\\.csv$",
+  "extra_flags": [
+    "-append",
+    "-nln",
+    "ozone_hourly_bt_test_slesa2",
+    "-oo",
+    "X_POSSIBLE_NAMES=longitude",
+    "-oo",
+    "Y_POSSIBLE_NAMES=latitude",
+    "-oo",
+    "AUTODETECT_TYPE=YES",
+    "-oo",
+    "EMPTY_STRING_AS_NULL=YES",
+    "--config",
+    "PG_USE_COPY",
+    "YES",
+    "--debug",
+    "on"
+  ],
+  "source_projection": "EPSG:4326",
+  "target_projection": "EPSG:4326",
+  "invalidate_cloudfront": false
+}
