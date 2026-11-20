@@ -1,0 +1,234 @@
+{
+  "collection": "geos-cf-ana",
+  "title": "DEMO - GEOS-CF (Analysis)",
+  "description": "Goddard Earth Observing System Composition Forecast (GEOS-CF) analysis files for Carbon Monoxide, Ozone, Nitrogen Dioxide, PM2.5, PM10, and Sulfur Dioxide.",
+  "license": "CC0-1.0",
+  "stac_version": "1.0.0",
+  "dashboard:is_periodic": true,
+  "links": [],
+  "spatial_extent": {
+    "xmin": -180,
+    "ymin": -90,
+    "xmax": 180,
+    "ymax": 90
+  },
+  "temporal_extent": {
+    "startdate": "2025-10-22T00:30:00Z",
+    "enddate": "2025-10-26T23:30:00Z"
+  },
+  "discovery_items": [
+    {
+      "discovery": "s3",
+      "prefix": "GEOS_CF/ana/",
+      "bucket": "veda-airquality-dev",
+      "filename_regex": ".*geos_cf_ana_.*\\.tif$",
+      "id_regex": ".*(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z)\\.tif$",
+      "id_template": "geos-cf-ana-{}",
+      "use_multithreading": false,
+      "collection": "geos-cf-ana",
+      "cogify": false,
+      "dry_run": false,
+      "assets": {
+        "CO": {
+          "description": "Near-surface concentrations of carbon monoxide (CO) estimated by NASA's GEOS-CF model.",
+          "regex": ".*_CO_.*\\.tif$",
+          "title": "Carbon Monoxide"
+        },
+        "NO2": {
+          "description": "Near-surface concentrations of nitrogen dioxide (NO2) estimated by NASA's GEOS-CF model.",
+          "regex": ".*_NO2_.*\\.tif$",
+          "title": "Nitrogen Dioxide"
+        },
+        "O3": {
+          "description": "Near-surface concentrations of ozone (O3)) estimated by NASA's GEOS-CF model.",
+          "regex": ".*_O3_.*\\.tif$",
+          "title": "Ozone"
+        },
+        "PM10": {
+          "description": "Near-surface concentrations of PM10 estimated by NASA's GEOS-CF model.",
+          "regex": ".*_PM10_.*\\.tif$",
+          "title": "Particulate Matter (10 micron)"
+        },
+        "PM25": {
+          "description": "Near-surface concentrations of PM2.5 estimated by NASA's GEOS-CF model.",
+          "regex": ".*PM25_.*\\.tif$",
+          "title": "Particulate Matter (2.5 micron)"
+        },
+        "SO2": {
+          "description": "Near-surface concentrations of sulfur dioxide (SO2) estimated by NASA's GEOS-CF model.",
+          "regex": ".*SO2_.*\\.tif$",
+          "title": "Sulfur Dioxide"
+        }
+      }
+    }
+  ],
+  "sample_files": [
+    "s3://veda-airquality-dev/GEOS_CF/ana/geos_cf_ana_CO_2025-10-22T00:30:00Z.tif"
+  ],
+  "data_type": "cog",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/render/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "renders": {
+    "dashboard": {
+      "assets": [
+        "CO"
+      ],
+      "rescale": [
+        [
+          0.1,
+          0.2
+        ]
+      ],
+      "nodata": -999,
+      "colormap_name": "ylorrd"
+    },
+    "CO": {
+      "assets": [
+        "CO"
+      ],
+      "rescale": [
+        [
+          0.1,
+          0.2
+        ]
+      ],
+      "nodata": -999,
+      "colormap_name": "ylorrd"
+    },
+    "NO2": {
+      "assets": [
+        "NO2"
+      ],
+      "rescale": [
+        [
+          0,
+          5
+        ]
+      ],
+      "nodata": -999,
+      "colormap_name": "greens"
+    },
+    "O3": {
+      "assets": [
+        "O3"
+      ],
+      "rescale": [
+        [
+          0.01,
+          0.06
+        ]
+      ],
+      "nodata": -999,
+      "colormap_name": "blues"
+    },
+    "PM10": {
+      "assets": [
+        "PM10"
+      ],
+      "rescale": [
+        [
+          0,
+          400
+        ]
+      ],
+      "nodata": -999,
+      "colormap_name": "turbo"
+    },
+    "PM25": {
+      "assets": [
+        "PM25"
+      ],
+      "rescale": [
+        [
+          0,
+          200
+        ]
+      ],
+      "nodata": -999,
+      "colormap_name": "turbo"
+    },
+    "SO2": {
+      "assets": [
+        "SO2"
+      ],
+      "rescale": [
+        [
+          0,
+          2
+        ]
+      ],
+      "nodata": -999,
+      "colormap_name": "viridis"
+    }
+  },
+  "providers": [
+    {
+      "name": "NASA VEDA",
+      "roles": [
+        "host"
+      ],
+      "url": "https://www.earthdata.nasa.gov/dashboard/"
+    }
+  ],
+  "eic:tenant": "air-quality",
+  "item_assets": {
+    "CO": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Carbon Monoxide",
+      "description": "Near-surface concentrations of carbon monoxide (CO) estimated by NASA's GEOS-CF model."
+    },
+    "NO2": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Nitrogen Dioxide",
+      "description": "Near-surface concentrations of nitrogen dioxide (NO2) estimated by NASA's GEOS-CF model."
+    },
+    "O3": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Ozone",
+      "description": "Near-surface concentrations of ozone (O3) estimated by NASA's GEOS-CF model."
+    },
+    "PM10": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "PM10",
+      "description": "Near-surface concentrations of PM10 estimated by NASA's GEOS-CF model."
+    },
+    "PM25": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "PM2.5",
+      "description": "Near-surface concentrations of PM2.5 estimated by NASA's GEOS-CF model."
+    },
+    "SO2": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Sulfur Dioxide",
+      "description": "Near-surface concentrations of sulfur dioxide (SO2) estimated by NASA's GEOS-CF model."
+    }
+  },
+  "is_periodic": true,
+  "time_density": "PT1H"
+}
