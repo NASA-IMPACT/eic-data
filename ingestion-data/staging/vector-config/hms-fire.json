@@ -1,0 +1,18 @@
+{
+  "collection": "hms_fire_sample",
+  "bucket": "airquality-data-store-develop",
+  "prefix": "hms_fire/featuresdb/",
+  "filename_regex": ".*\\.gpkg$",
+  "vector": true,
+  "source_projection": "EPSG:4326",
+  "target_projection": "EPSG:4326",
+  "extra_flags": ["-overwrite", "-progress", "-nlt", "POINT", "-lco", "GEOMETRY_NAME=geom"],
+  "table_config": {
+    "schema": "public",
+    "indexes": [
+      {"columns": ["datetime"], "method": "btree", "concurrently": true}
+    ],
+    "analyze": true
+  },
+  "invalidate_cloudfront": true
+}
