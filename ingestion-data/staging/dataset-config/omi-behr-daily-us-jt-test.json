@@ -1,0 +1,55 @@
+{
+  "collection": "omi-behr-daily-us-jt-test",
+  "title": "OMI BEHR Daily US Test ",
+  "description": "OMI BEHR Daily US Test by Jennifer",
+  "license": "CC0-1.0",
+  "stac_version": "1.0.0",
+  "spatial_extent": {
+    "xmin": -180,
+    "ymin": -90,
+    "xmax": 180,
+    "ymax": 90
+  },
+  "temporal_extent": {
+    "startdate": "2026-08-04T00:00:00.000Z",
+    "enddate": "2026-08-04T23:59:59.000Z"
+  },
+  "discovery_items": [
+    {
+      "discovery": "s3",
+      "prefix": "omi/",
+      "bucket": "airquality-data-store-develop",
+      "filename_regex": "OMI_BEHR-DAILY_US_v3-0B_201409.*\\.tif$",
+      "use_multithreading": false
+    }
+  ],
+  "sample_files": [
+    "s3://airquality-data-store-develop/omi/OMI_BEHR-DAILY_US_v3-0B_20140930.tif"
+  ],
+  "data_type": "cog",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/render/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "providers": [
+    {
+      "name": "NASA VEDA",
+      "roles": [
+        "host"
+      ],
+      "url": "https://www.earthdata.nasa.gov/dashboard/"
+    }
+  ],
+  "eic:tenant": "air-quality",
+  "item_assets": {
+    "cog_default": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data",
+        "layer"
+      ],
+      "title": "Default COG Layer",
+      "description": "Cloud optimized default layer to display on map"
+    }
+  }
+}
