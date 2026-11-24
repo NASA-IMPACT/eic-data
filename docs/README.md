@@ -10,16 +10,16 @@ The workflows read config from two GitHub Environments (under Settings -> Enviro
 For the GitHub `staging` environment, the following config should be set:
 
 - Secrets, for a staging instance using Airflow 2, `STAGING_SM2A_ADMIN_USERNAME` and `STAGING_SM2A_ADMIN_PASSWORD`.
-- Secrets, for a staging instance using Airflow 3, `AIRFLOW_JWT_SECRET` and `AIRFLOW_JWT_SUB`.
+- Secrets, for a staging instance using Airflow 3, `AIRFLOW_JWT_SECRET`.
 - Secret for the MDX PR step: `APP_PEM`.
-- Vars: `STAGING_SM2A_API_URL`, `STAGING_AIRFLOW_API_VERSION`, `DATASET_DAG_NAME`, and `ARTIFACT_RETENTION_DAYS`.
+- Vars: `STAGING_SM2A_API_URL`, `STAGING_AIRFLOW_API_VERSION`, `DATASET_DAG_NAME`, `AIRFLOW_JWT_SUB`, and `ARTIFACT_RETENTION_DAYS`.
 - Vars for the MDX step: `SKIP_MDX_PR_STEP`, `VEDA_CONFIG_REPO_ORG`, `VEDA_CONFIG_REPO_NAME`, `VEDA_CONFIG_APP_ID`, and `GH_ACTOR_EMAIL`.
 
 For the GitHub `production` environment, the following config should be set:
 
 - Secrets, for a production instance using Airflow 2, `SM2A_ADMIN_USERNAME` and `SM2A_ADMIN_PASSWORD`.
-- Secrets, for a production instance using Airflow 3, `AIRFLOW_JWT_SECRET` and `AIRFLOW_JWT_SUB` *which should be different values from what is set in staging*.
-- Vars: `SM2A_API_URL`, `PRODUCTION_AIRFLOW_API_VERSION` and `PROMOTION_DAG_NAME`.
+- Secrets, for a production instance using Airflow 3, `AIRFLOW_JWT_SECRET` *which should be different values from what is set in staging*.
+- Vars: `SM2A_API_URL`, `PRODUCTION_AIRFLOW_API_VERSION`, `AIRFLOW_JWT_SUB`, and `PROMOTION_DAG_NAME`.
 
 > Note: `*_AIRFLOW_API_VERSION` is the Airflow major version (can be either 2 or 3) which defaults to 2 if unset. The JWT secrets **are only needed for Airflow 3**.
 
